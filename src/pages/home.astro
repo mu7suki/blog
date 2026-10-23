@@ -1,0 +1,18 @@
+---
+import Base from "../layouts/Base.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts, url } from "../lib/posts";
+
+const recent = (await getPosts()).slice(0, 3);
+---
+<Base>
+  <section class="section">
+    <h2 class="section-title">recent articles</h2>
+    <div class="card-grid card-grid--recent">
+      {recent.map((post) => <PostCard post={post} />)}
+    </div>
+    <div class="more">
+      <a class="more-link" href={url("articles/")}>show more →</a>
+    </div>
+  </section>
+</Base>

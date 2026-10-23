@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/posts";
+---
+<Base title="not found">
+  <article class="post">
+    <p class="post-meta">404</p>
+    <h1 class="post-title">ページが見つかりません</h1>
+    <div class="post-body">
+      <p><a href={url("articles/")}>記事一覧へ戻る</a></p>
+    </div>
+  </article>
+</Base>

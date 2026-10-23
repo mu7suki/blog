@@ -1,0 +1,26 @@
+{
+  "diary": {
+    "label": "diary",
+    "color": "#7aa2f7"
+  },
+  "book": {
+    "label": "book",
+    "color": "#bb9af7"
+  },
+  "music": {
+    "label": "music",
+    "color": "#f7768e"
+  },
+  "photo": {
+    "label": "photo",
+    "color": "#e0af68"
+  },
+  "code": {
+    "label": "code",
+    "color": "#9ece6a"
+  },
+  "thought": {
+    "label": "thought",
+    "color": "#7dcfff"
+  }
+}

@@ -1,0 +1,15 @@
+---
+import { tagInfo, tagUrl } from "../lib/posts";
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+<ul class="tags">
+  {tags.map((tag) => {
+    const t = tagInfo(tag);
+    return <li><a class="tag" style={`--tag:${t.color}`} href={tagUrl(tag)}>{t.label}</a></li>;
+  })}
+</ul>

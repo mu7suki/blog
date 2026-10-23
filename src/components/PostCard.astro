@@ -1,0 +1,24 @@
+---
+import TagList from "./TagList.astro";
+import { formatDate, letterCount, plainText, postUrl, type Post } from "../lib/posts";
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const text = plainText(post.body);
+const excerpt = text.length > 110 ? text.slice(0, 110) + "…" : text;
+---
+<article
+  class="card"
+  data-id={post.id}
+  data-date={post.data.date}
+  data-updated={post.data.updated ?? post.data.date}
+  data-tags={post.data.tags.join(" ")}
+>
+  <p class="card-meta">{formatDate(post.data.date, false)}<span class="slash"> ／ </span>{letterCount(post.body)} letters</p>
+  <h3 class="card-title"><a href={postUrl(post.id)}>{post.data.title}</a></h3>
+  <p class="card-excerpt">{excerpt}</p>
+  <TagList tags={post.data.tags} />
+</article>
